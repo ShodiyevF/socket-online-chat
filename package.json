@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "apollo-server": "^2.23.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "socket.io": "^4.0.1"
+  },
+  "name": "54-dars",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

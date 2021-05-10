@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('Ubuntu-Bold.woff2') format('woff2'),
+        url('Ubuntu-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('Ubuntu-Regular.woff2') format('woff2'),
+        url('Ubuntu-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    background-color: dodgerblue;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.big-wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    z-index: 100;
+    width: 97.4%;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding: 20px;
+    border: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.list-wrapper{
+    width: 100%;
+}
+
+.list{
+    width: 97.4%;
+    height: 87.7vh;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    overflow: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.list::-webkit-scrollbar {
+  width: 12px;
+}
+ 
+.list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+li{
+    width: auto;
+    min-width: 60px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    padding: 10px;
+    background: #355C7D;
+    color: white;
+    background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+}
+
+.test{
+    margin-left: auto;
+}
+
+.added_li{
+    margin-right: auto;
+    
+}
+
+.text-span{
+    
+    display: flex;
+    justify-content: center;
+}
+
+span{
+    font-weight: bold;
+}
+
+.text-time-wrapper{
+    width: auto;
+    /* min-width: 60px; */
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.no_user{
+    margin-top: -5px;
+}
+
+p{
+    margin: 0;
+    /* margin-right: 5px; */
+    /* margin-left: auto; */
+}
+
+.time{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+@media only screen and (min-width: 319px) {
+    
+    .list{
+        height: 94.7vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;
+    }
+    
+}
+
+
+@media only screen and (min-width: 424px) {
+    
+    .list{
+        height: 93.5vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    
+    body{
+        overflow: hidden;
+        height: 550px;
+    }
+
+    .big-wrapper{
+        height: 83vh;
+    }
+    
+    .list{
+        height: 89.3vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;
+    }
+    
+}
+
+@media only screen and (min-width: 700px) {
+    
+    body{
+        overflow: hidden;
+        height: 550px;
+    }
+
+    .big-wrapper{
+        height: 83vh;
+    }
+    
+    .list{
+        height: 91.8vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;
+    }
+    
+}
+
+@media only screen and (min-width: 750px) {
+    
+    body{
+        overflow: hidden;
+        height: 550px;
+    }
+
+    .big-wrapper{
+        height: 83vh;
+    }
+    
+    .list{
+        height: 90vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;
+    }
+    
+}
+
+@media only screen and (min-width: 1020px) {
+    .list{
+        height: 88vh;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .list{
+        height: 89vh;
+    }
+}
+
+@media only screen and (min-width: 2555px) {
+    
+    .list{
+        height: 93vh;
+    }
+
+    .input{
+        margin: 0;
+        margin-top: auto;   
+    }
+    
+}
