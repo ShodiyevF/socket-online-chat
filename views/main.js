@@ -36,68 +36,74 @@ const socket = io()
 // list.appendChild(elementLi)
 
 socket.on('new_message', data => {
-
+    
     const elementLi = document.createElement('li')
     const elementSpan = document.createElement('span')
     const elementP = document.createElement('p')
     const elementTimeWrapper = document.createElement('div')
     const elementTime = document.createElement('time')
     const elementTimeSpan = document.createElement('span')
-
-
+    
+    
     elementLi.classList.add('added_li')
     elementSpan.classList.add('text-span')
     elementTimeWrapper.classList.add('text-time-wrapper')
     elementTime.classList.add('time')
-
-    if (username_value === '') {
-        elementTimeWrapper.classList.add('no_user')
+    
+    if(data.content === ''){
+        
+    } else{
+        
+        
+        if (username_value === '') {
+            elementTimeWrapper.classList.add('no_user')
+        }
+        
+        elementSpan.textContent = data.username;
+        elementP.textContent = data.content;
+        elementTimeSpan.textContent = formatAMPM(date)
+        elementTime.textContent = h + ":" + m;
+        
+        
+        elementLi.appendChild(elementSpan)
+        elementLi.appendChild(elementTimeWrapper)
+        elementTimeWrapper.appendChild(elementP)
+        elementTimeWrapper.appendChild(elementTime)
+        elementTime.appendChild(elementTimeSpan)
+        
+        list.appendChild(elementLi)
+        
+        const notificationSound = new Audio('Notification.mp3')
+        
+        notificationSound.play();
+        scrollDown()
     }
-
-    elementSpan.textContent = data.username;
-    elementP.textContent = data.content;
-    elementTimeSpan.textContent = formatAMPM(date)
-    elementTime.textContent = h + ":" + m;
-
-
-    elementLi.appendChild(elementSpan)
-    elementLi.appendChild(elementTimeWrapper)
-    elementTimeWrapper.appendChild(elementP)
-    elementTimeWrapper.appendChild(elementTime)
-    elementTime.appendChild(elementTimeSpan)
-
-    list.appendChild(elementLi)
-
-    const notificationSound = new Audio('Notification.mp3')
-
-    notificationSound.play();
-    scrollDown()
-
+    
 })
 
 input.onkeyup = e => {
-
+    
     if (e.keyCode === 13) {
-
+        
         socket.emit('send_message', {
             username: username_value,
             content: e.currentTarget.value,
         })
-
+        
         const elementLi = document.createElement('li')
         const elementSpan = document.createElement('span')
         const elementP = document.createElement('p')
         const elementTimeWrapper = document.createElement('div')
         const elementTime = document.createElement('time')
         const elementTimeSpan = document.createElement('span')
-
+        
         elementLi.classList.add('test')
         elementSpan.classList.add('text-span')
         elementTimeWrapper.classList.add('text-time-wrapper')
         elementTime.classList.add('time')
-
+        
         if (e.currentTarget.value === '') {
-
+            
         } else {
             
             if (username_value === '') {
@@ -107,25 +113,25 @@ input.onkeyup = e => {
             const date = new Date();
             let h = date.getHours();
             let m = date.getMinutes();
-
+            
             elementSpan.textContent = username_value;
             elementP.textContent = e.currentTarget.value;
             elementTimeSpan.textContent = formatAMPM(date)
             elementTime.textContent = h + ":" + m;
-
-
+            
+            
             elementLi.appendChild(elementSpan)
             elementLi.appendChild(elementTimeWrapper)
             elementTimeWrapper.appendChild(elementP)
             elementTimeWrapper.appendChild(elementTime)
             elementTime.appendChild(elementTimeSpan)
-
+            
             list.appendChild(elementLi)
             
         }
-
+        
         input.value = ''
         scrollDown()
     }
-
+    
 }
